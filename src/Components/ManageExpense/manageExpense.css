@@ -1,0 +1,20 @@
+.card {
+    border: 5px solid dodgerblue;
+    border-radius: 30px;
+}
+.but-container {
+    justify-content: space-between;
+}
+.main {
+    background-color: dodgerblue;
+    height: 80vh;
+}
+
+
+.but {
+    height: 13px;
+    width: 13px;
+}
+.but:hover {
+    cursor: pointer;
+}

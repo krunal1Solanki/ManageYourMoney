@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import AddExpense from './Components/AddExpense/AddExpense'
+import Header from './Components/Header/Header'
+import Login from './Components/Login/Login'
+import ManageExpense from './Components/ManageExpense/ManageExpense'
+import ProtectedRoute from './Components/ProtectedRoutes/ProtectedRoute'
+import UpdateExpense from './Components/Update Expense/UpdateExpense'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <>
+    <Header/>
+    <Routes>
+      <Route path="/" element={<ProtectedRoute Component={ManageExpense} />} />
+      <Route path="/add-expense" element={<ProtectedRoute Component={AddExpense} />} />
+      <Route path='/update-expense/:item' element={<ProtectedRoute Component={UpdateExpense}/>}/>
+      <Route path='/login' element={<Login/>} />   
+    </Routes>
+    </>
+    )
 }
 
-export default App;
+export default App
