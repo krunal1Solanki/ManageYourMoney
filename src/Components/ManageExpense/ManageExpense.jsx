@@ -29,9 +29,6 @@ import { useEffect } from 'react';
 
 
 const ManageExpense = () => {
-    useEffect(()=>{
-
-    },[])
     let idx = 0;
     const data = useSelector(state => state)
     const [expenseData, setExpenseData] = useState(data);
